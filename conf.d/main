@@ -45,6 +45,10 @@ sed -i "s|^#USUFFIX|USUFFIX|" $CONF
 CONF=/etc/default/slapd
 sed -i "s|^SLAPD_SERVICES.*|SLAPD_SERVICES=\"ldap:/// ldapi:/// ldaps:///\"|" $CONF
 
+# set webmin ldap-server module username
+CONF=/etc/webmin/ldap-server/config
+sed -i "s|^\(ldap_user=\).*|\1openldap|" $CONF
+
 # generate TLS certs and re-initialize ldap
 /usr/lib/inithooks/firstboot.d/20regen-openldap-secrets
 /usr/lib/inithooks/bin/openldap.py --domain=$LDAP_DOMAIN --pass=$LDAP_PASS
