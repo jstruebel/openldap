@@ -1,0 +1,8 @@
+create=0
+noconfig=0
+acl=1
+browser=0
+schema=1
+apply=1
+ldif=1
+start=1
