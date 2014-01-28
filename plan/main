@@ -9,3 +9,5 @@ lighttpd
 php5-cgi
 php5-ldap
 
+libnet-ldap-perl
+webmin-ldap-server
